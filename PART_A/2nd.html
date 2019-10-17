@@ -1,34 +1,31 @@
 <html>
-	<body>
-		<form>
-		Enter the no. <br>
-		<input type="number" name="val" id="num"> <br>
-		<input type="button" name="check" onclick="check1()" value="Check">
-		Result is <span id="res"></span>....!
-		</form>
-	</body>
-	<!-- Note: If asked to keep the script below in a seperate .js file(a1.js) just link it using the following tagline 
-	     (Same applies for questions a3,a4,a6) -->
-	<!-- <script type="text/javascript" src="a1.js"></script> -->
-	<script>
-		function check1(){
-			var x = document.getElementById("num").value;
-			
-			if(x==""){
-				document.getElementById("res").innerHTML =  "Enter  value";
-			}
-			else if(x<0)
-				document.getElementById("res").innerHTML =  "Enter positive value";
-			else{
-			if(x%3==0 && x%7==0)
-				document.getElementById("res").innerHTML =  "Divisible by 3 and 7";
-			else if(x%3==0 && x%7!=0)
-				document.getElementById("res").innerHTML =  "Divisible by only 3 and not 7";
-			else if(x%3!=0 && x%7==0)
-				document.getElementById("res").innerHTML =  "Divisible by only 7 and not 3";
-			else
-				document.getElementById("res").innerHTML =  "Not divisible by both 3 or 7";
-		}
-		}
-	</script>
+<head>
+<title>Authors Details</title>
+</head>
+<body>
+  <center><h2> Authors and Details</h2></center>
+  <table border="2">
+    <th>Authors</th>
+    <th>BookDetails</th>
+    <tr>
+      <td id="a0"></td>
+      <td id="t0"></td>
+    </tr>
+    <tr>
+      <td id="a1"></td>
+      <td id="t1"></td>
+    </tr>
+  </table>
+  <p id="a2"></p>
+  <p id="a3"></p>
+</body>
+  <script src="2nd.json"></script>
+<script>
+ document.getElementById("a0").innerHTML = authors[0].author;
+  document.getElementById("t0").innerHTML = authors[0].title;
+  document.getElementById("a1").innerHTML = authors[1].author;
+  document.getElementById("t1").innerHTML = authors[1].title;
+  document.getElementById("a2").innerHTML = authors[2].author;
+  document.getElementById("a3").innerHTML = authors[3].author;
+</script>
 </html>
