@@ -1,0 +1,64 @@
+<html>
+<head>
+ 
+  <title>Author Details</title>
+  
+</head>
+<body>
+  <table border>
+    <th>
+      Name
+    </th>
+    <th>
+      Native_Country
+    </th>
+    <th>
+      Story_Title
+    </th>
+    <th>
+      Publication_Year
+    </th>
+    <tr>
+      <td id="n0"></td>
+      <td id="c0"></td>
+      <td id="s0"></td>
+      <td id="y0"></td>
+    </tr>
+    <tr>
+      <td id="n1"></td>
+      <td id="c1"></td>
+      <td id="s1"></td>
+      <td id="y1"></td>
+    </tr>
+  </table>
+<p id="n2"></p>
+<p id="c2"></p>
+<p id="s2"></p>
+<p id="y2"></p>
+<p id="n3"></p>
+<p id="c3"></p>
+<p id="s3"></p>
+<p id="y3"></p>
+</body>
+<script src="5th.json"></script>
+
+<script>
+
+document.getElementById("n0").innerHTML = person[0].name
+document.getElementById("n1").innerHTML = person[1].name
+document.getElementById("n2").innerHTML = person[2].name
+document.getElementById("n3").innerHTML = person[3].name
+document.getElementById("c0").innerHTML = person[0].country
+document.getElementById("c1").innerHTML = person[1].country
+document.getElementById("c2").innerHTML = person[2].country
+document.getElementById("c3").innerHTML = person[3].country
+document.getElementById("s0").innerHTML = person[0].story
+document.getElementById("s1").innerHTML = person[1].story
+document.getElementById("s2").innerHTML = person[2].story
+document.getElementById("s3").innerHTML = person[3].story
+document.getElementById("y0").innerHTML = person[0].year
+document.getElementById("y1").innerHTML = person[1].year
+document.getElementById("y2").innerHTML = person[2].year
+document.getElementById("y3").innerHTML = person[3].year
+</script>
+</html>
