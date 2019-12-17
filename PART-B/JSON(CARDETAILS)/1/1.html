@@ -1,0 +1,65 @@
+<!-- Create a web page that does the following:
+a) Displays a text which changes colour on hover
+b) Displays the image of a car
+c) On mouse-over on the image the name of the car must be displayed
+d) The car-name and car-image-name must be stored as a JSON array object 
+-->
+<html>
+<head>
+	<title>
+		Examples of JSON array 
+	</title>
+</head>
+<body>
+		<p id="id1"> Ford </p>
+		<br>
+
+		<label id="img1" onmouseover="ImgHover()">Here image will be displayed</label>
+		<br>
+
+		<label id="id2" hidden>Car name will be displayed here on mouseover event</label>
+		<label id="name1"></label>
+		
+		<br>
+
+		<script>
+			var cars=[
+				{"name" : "i10",  "image" : "Ford2"}
+				];
+			document.getElementById("id1").addEventListener("click", id1ClickFunction);
+
+function id1ClickFunction()
+{
+  var z1=" ", x1=" ";
+
+  x1 += cars[0].name;
+  document.getElementById("id1").innerHTML = x1;
+
+
+  z1 += cars[0].image;
+  document.getElementById("img1").innerHTML = '<img src="'+z1+'.jpeg"/>';
+
+}
+
+function ImgHover()
+{
+  document.getElementById("id2").removeAttribute('hidden');
+  var x1=" ";
+  x1 += cars[0].name;
+  document.getElementById("name1").innerHTML = x1;
+}
+
+		</script>
+<style>
+
+  p {
+       background-color: green;
+      }
+  p:hover {
+    background-color: #87CEFA;
+
+  }
+
+</style>
+</body>
+</html>

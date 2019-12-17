@@ -1,0 +1,42 @@
+<!--Simple Javascript program using number inputs-->
+<html>
+	<head>
+
+		<title>
+			Number Inputs			
+		</title>
+	</head>
+	<body>
+		<form>
+		<p> Enter two numbers </p> <br><br>
+		
+		Enter Number1
+		<input type="text" id="num1"/> <br><br>
+
+		Enter Number2
+		<input type="text" id="num2"/> <br><br>
+		
+		
+
+		<input type="button" value="Press me to view the result" onclick="myFunction()"/>
+
+		</form>		
+		<p id="result">  </p> <br><br>
+
+		<script>
+			function myFunction()
+			{
+				n1=document.getElementById("num1").value;
+				n2=document.getElementById("num2").value;	
+				if(n1 && n2 && n1>0 && n2>0)
+				{	
+					document.getElementById("result").innerHTML=n1/n2;	
+				}
+				else
+				{	
+					document.getElementById("result").innerHTML="Please enter correct positive numbers";			
+				}
+			}
+		</script>
+	</body>
+</html>

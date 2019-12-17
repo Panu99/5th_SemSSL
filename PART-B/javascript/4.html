@@ -1,0 +1,43 @@
+<!--JavaScript String Methods-->
+
+<html>
+	<head>
+		<title>
+			JavaScript String
+		</title>
+		<script>
+			function myFunction()
+			{
+				myString = document.getElementById("mytext").value;
+				
+				//Finding length
+				myString_length=myString.length;
+				
+				//Finding first and last occurence
+				myString_find_first=myString.indexOf("The");
+				myString_find_last=myString.lastIndexOf("The");
+				
+				//split method
+				myString_array=myString.split(" ");
+
+				//Displaying the results
+				document.getElementById("result").innerHTML = "The entered string is"+myString+" .\n The first and last occurence of the word \' the \' is at"+
+				myString_find_first+ "and" + myString_find_last +". \n And individual words are as follows " + myString_array;
+			}
+		</script>
+	</head>
+	<body>
+		<form>
+			<h3> JavaScript String Functions </h3> <br><br>
+			<p> Enter a string here </p> <br><br>
+			
+			<textarea rows=5 cols=30 id="mytext"> </textarea> <br><br>
+
+			<input type="button" value="Click me to view results!" onclick="myFunction()"/>
+
+			
+		</form>
+
+			<p id="result"> </p>
+	</body>
+</html>

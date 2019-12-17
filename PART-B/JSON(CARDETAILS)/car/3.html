@@ -1,0 +1,135 @@
+<!-- Create a web page that does the following:
+a) Displays a table with three headings of Car types
+b) The headings changes colour on mouse hover
+c) On mouse-hover on a car type the following are displayed
+   The image of the car
+   The models of the car
+   The image of the car
+d) The car-image-name and names must be stored as JSON array objects
+e) The car-model names must also be stored as a JSON array inside the above array for car-image
+f) There must be atleast three such entries for the three car-types 
+-->
+
+
+<html>
+	<head>
+		<title>
+			JSON Demo3
+		</title>
+	</head>
+	<body>
+		<table>
+			<caption> Table of cars </caption>
+			<tr>
+				<th id="car1">Ford</th>
+				<th id="car2">BMW</th>
+				<th id="car3">Fiat</th>
+			</tr>
+		</table>
+
+
+		<br><br><br>
+		<label id="label1" hidden>Car Name : </label><label id = "name1"></label>
+		
+		<br><br><br>
+		<label id="label2" hidden>Car Models :</label><label id = "model1"></label>
+
+		<br><br><br>	
+		<label id="label3" hidden>Car Generally Looks like below: </label>
+		<br><br><br>
+		<label id = "image1"></label>
+
+	<script>
+
+		document.getElementById("car1").addEventListener("click", head1ClickFunction);
+		document.getElementById("car2").addEventListener("click", head2ClickFunction);
+		document.getElementById("car3").addEventListener("click", head3ClickFunction);
+
+		var cars = [
+    				{"name":"Ford", "image": "Ford2", "models":["Fiesta", "Focus", "Mustang"]},
+   				{"name":"BMW", "image": "BMW1", "models":["320", "X3", "X5"]},
+    				{"name":"Fiat", "image": "Fiat2", "models":["500", "Panda"] }
+			];		
+
+			var j1;
+
+			function head1ClickFunction()
+			{
+				var x1=" ",x2=" ", z1=" ";
+	
+				document.getElementById("label1").removeAttribute('hidden');
+				document.getElementById("label2").removeAttribute('hidden');
+				document.getElementById("label3").removeAttribute('hidden');
+
+				x1 += cars[0].name;
+				document.getElementById("name1").innerHTML = x1;
+
+				z1 += cars[0].image;
+				document.getElementById("image1").innerHTML = '<img src="'+z1+'.jpeg"/>';
+
+				for (j1 in cars[0].models)
+				{
+				      x2 += cars[0].models[j1]+ "&nbsp&nbsp&nbsp";
+				}
+				document.getElementById("model1").innerHTML = x2;
+			}
+
+	
+			function head2ClickFunction()
+			{
+				var x1=" ",x2=" ", z1=" ";
+
+  				document.getElementById("label1").removeAttribute('hidden');
+  				document.getElementById("label2").removeAttribute('hidden');
+				document.getElementById("label3").removeAttribute('hidden');
+
+				x1 += cars[1].name;
+				document.getElementById("name1").innerHTML = x1;
+
+				z1 += cars[1].image;
+  				document.getElementById("image1").innerHTML = '<img src="'+z1+'.jpeg"/>';
+
+				for (j1 in cars[1].models) 
+				{
+      					x2 += cars[1].models[j1]+ "&nbsp&nbsp&nbsp";
+				}
+  				document.getElementById("model1").innerHTML = x2;
+
+			}
+
+			
+
+			function head3ClickFunction()
+			{
+  				var x1=" ",x2=" ", z1=" ";
+
+  				document.getElementById("label1").removeAttribute('hidden');
+  				document.getElementById("label2").removeAttribute('hidden');
+  				document.getElementById("label3").removeAttribute('hidden');
+
+  				x1 += cars[2].name;
+  				document.getElementById("name1").innerHTML = x1;
+
+  				z1 += cars[2].image;
+  				document.getElementById("image1").innerHTML = '<img src="'+z1+'.jpeg"/>';
+
+				for (j1 in cars[2].models) 
+				{
+					x2 += cars[2].models[j1]+ "&nbsp&nbsp&nbsp";
+				}
+  				document.getElementById("model1").innerHTML = x2;
+			}
+
+
+	</script>
+	<style>
+		th {
+		        background-color: green;
+   		   }
+  		
+		th:hover {
+		        background-color: #87CEFA;
+		}
+	</style>
+	</body>
+</html>

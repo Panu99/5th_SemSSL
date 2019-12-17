@@ -1,0 +1,66 @@
+<!--Dynamically loading JSON data - Implement a HTML+JS application that has a JSON Array with details of different kinds of data. Example: Model, Name, Price, Year. Display details of each vehicle dynamically by only showing details of the vehicle that the user has selected (via mouse-over)
+-->
+
+
+<html>
+<body>
+	<table>
+		<tr>
+		<th>List of cars</th>
+		</tr>
+	</table>
+
+
+	<p onmouseover="show()">Ford</p>
+	<p onmouseover="show1()">Honda</p>
+	<p onmouseover="show2()">Maruti</p>
+
+
+	<table id= "tab" hidden border="1">
+		<tr>
+			<th>Name</th>
+			<th>Price</th>
+			<th>Car</th>
+		</tr>
+		
+		<tr>
+			<td id="n1"></td>
+			<td id="p1"></td>
+			<td id="c1"></td>
+		</tr>
+	</table>
+	
+
+	<!--JSON can also be imported-->
+	<script type="text/javascript">
+		y = '{"car1":{"name":"Ford","price":"5L","image":"ford"},"car2":{"name":"Maruti","price":"15L","image":"maruti"}}'
+
+		function show()
+		{
+			var x=JSON.parse(y);
+			document.getElementById("tab").removeAttribute("hidden");	
+			document.getElementById("n1").innerHTML=x.car1.name;
+			document.getElementById("p1").innerHTML=x.car1.price;
+			document.getElementById("c1").innerHTML='<img src="'+x.car1.image+'.jpeg">';
+		}
+	
+		function show1()
+		{
+			var x=JSON.parse(y);
+			document.getElementById("tab").removeAttribute("hidden");	
+			document.getElementById("n1").innerHTML=x.car2.name
+			document.getElementById("p1").innerHTML=x.car2.price;
+			document.getElementById("c1").innerHTML='<img src="'+x.car2.image+'.jpeg">';
+		}
+	
+		function show2()
+		{
+			var x=JSON.parse(y);
+			document.getElementById("tab").removeAttribute("hidden");	
+			document.getElementById("n1").innerHTML=x.car3.name
+			document.getElementById("p1").innerHTML=x.car3.price;
+			document.getElementById("c1").innerHTML='<img src="'+x.car3.image+'.jpeg">';
+		}
+	</script>
+</body>
+</html>
